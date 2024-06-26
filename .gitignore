@@ -22,7 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# .gitignore
-.env
+#api key
+.env*.local
 
