@@ -3,7 +3,7 @@ import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "sk-proj-ABbEtuxU9ou5ViuLNJroT3BlbkFJlZ5w6CpIh9gMTzB7VCO9";
+const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 
 //Request format: 
@@ -25,7 +25,7 @@ function App() {
       direction: "incoming",
 
     }
-  ]) // []
+  ]) 
 
   const handleSend = async (message) =>{
     const newMessage = {
@@ -78,7 +78,7 @@ function App() {
     }).then((data)=>{
       return data.json();
     }).then((data)=>{
-      console.log(data.choices[0].message.content);
+      // console.log(data.choices[0].message.content);
       setMessages(
         [...chatMessages,{
           message: data.choices[0].message.content,
@@ -102,6 +102,7 @@ function App() {
                   return <Message key = {i} model={message}/>
                 })}
               </MessageList>
+              hi
               <MessageInput placeholder='type here' onSend={handleSend}/>
             </ChatContainer>
           </MainContainer>
