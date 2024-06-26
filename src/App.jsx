@@ -4,7 +4,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 
 //OPEN AI API KEY
-const API_KEY = "sk-proj-ABbEtuxU9ou5ViuLNJroT3BlbkFJlZ5w6CpIh9gMTzB7VCO9";
+const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 //Request format: 
 // curl https://api.openai.com/v1/chat/completions \
 //   -H "Content-Type: application/json" \
