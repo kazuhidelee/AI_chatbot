@@ -7,6 +7,7 @@
 
 ## How to run
 - add a .env.local folder in the root and add OpenAI API key in the file
+- Make sure dependencies are installed: `npm install`
 - in terminal type: `npm run dev`
 
 ## Approach
